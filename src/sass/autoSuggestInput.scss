@@ -1,0 +1,138 @@
+$items-container-color: rgb(235, 236, 240);
+$item-text-background-color: lightblue;
+$item-action-color:  gainsboro;
+$item-action-color-hover: darken($item-action-color, 8%);
+$border-radius: 4px;
+
+.autoSuggestInput{
+    &__items{
+        padding: 5px 0;
+        border-radius: $border-radius;
+
+        @media (hover: hover){
+            &:hover{
+                background-color: $items-container-color;
+            }
+        }
+
+        &-active{
+            background-color: $items-container-color;
+        }
+    }
+
+    &NoItems__text{
+        display: inline-block;
+        margin: 4px 10px;
+        padding: 5px 10px;
+        line-height: 28px;
+        vertical-align: bottom;
+        background-color: $items-container-color;
+    }
+
+    .autoSuggestInputItem{
+        display: inline-block;
+        margin: 4px 10px;
+
+        &__text{
+            background-color: $item-text-background-color;
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+        }
+
+        &__text,
+        &__remove,
+        .autoSuggestInputAddBtn{
+            padding: 5px 10px;
+            height: 40px;
+            box-sizing: border-box;
+            display: inline-flex;
+            align-items: center;
+            vertical-align: bottom;
+        }
+
+        &__remove{
+            background-color: $item-action-color;
+            cursor: pointer;
+            fill: grey;
+            border: 1px solid $item-action-color-hover;
+            padding: 5px;
+            outline: none;
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+            
+            @media (hover: hover){
+                &:hover{
+                    background-color: $item-action-color-hover;
+                }
+            }
+        }
+
+        .autoSuggestInputAddBtn{
+            border: none;
+            width: 40px;
+            font-family: "Open Sans";
+            margin: 0;
+            font-size: 30px;
+            background-color: $item-action-color;
+            padding: 0 10px;
+            color: grey;
+            border: 1px solid $item-action-color-hover;
+            border-radius: $border-radius;
+        }
+
+        @media (hover: hover){
+            .autoSuggestInputAddBtn{
+                display:none;
+            }
+        }
+    }
+
+    .autoSuggestInputNewItem{
+        display:block;
+        position: relative;
+        margin: 4px 10px;
+
+        &__container{
+            position:absolute;
+            border: solid 1px darken($item-text-background-color, 8%);
+            border-radius: $border-radius;
+        }
+
+        &__text{
+            min-width: 150px;
+            padding: 10px;
+            outline: none;
+            background-color: $item-text-background-color;
+            height: 40px;
+            box-sizing: border-box;
+        }
+    
+        &__list{
+            list-style-type: none;
+            padding:0;
+            width:100%;
+            background-color: $item-text-background-color;
+            margin: 0;
+            box-sizing: border-box;
+            border-top: solid 1px darkgray;
+            max-height: 230px;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+
+        &__listitem{
+            padding: 8px 10px;
+            cursor: pointer;
+
+            @media (hover: hover){
+                &:hover{
+                    background-color: darken($item-text-background-color, 8%)
+                }
+            }
+        }
+    }
+
+    .hidden{
+        display:none;
+    }
+}
