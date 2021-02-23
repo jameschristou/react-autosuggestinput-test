@@ -2,7 +2,7 @@ import React from "react";
 import ReactAutoSuggestInput from '../../src/ReactAutoSuggestInput';
 
 const TestPageComponent = () => {
-  const delayInMs = 2000;
+  const delayInMs = 700;
 
   const filterNameOptionsHandler = async (input, updateSuggestionsCallback) => {
     let options = [
